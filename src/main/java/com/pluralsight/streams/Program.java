@@ -25,13 +25,22 @@ public class Program {
 		peers.add(new Person("Nisa", "King", 22));
 		peers.add(new Person("Morgan", "Edmonds", 21));
 		peers.add(new Person("Hignacio", "Virgen", 21));
+		peers.add(new Person("Sherlock", "Holmes", 44));
+		peers.add(new Person("Stacy", "Holmes", 44));
+
 
 		System.out.println("Type a name to search: ");
-		String search = getInput.nextLine();
+		String search = getInput.nextLine().toLowerCase();
 
 		List<Person> result = peers.stream()
 				.filter(p -> p.getFullName().toLowerCase().contains(search))
 				.collect(Collectors.toCollection(ArrayList::new));
+		result.forEach(System.out::println);
+
+		
+
+
+
 
 	}
 
